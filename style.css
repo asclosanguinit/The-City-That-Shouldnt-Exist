@@ -128,3 +128,22 @@ body, html {
     50% { opacity: 1; }
       }
   
+#fullscreen-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 100;
+    background: rgba(15, 18, 24, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+
+#fullscreen-btn:active {
+    background: #4a90e2;
+    color: #000;
+    }

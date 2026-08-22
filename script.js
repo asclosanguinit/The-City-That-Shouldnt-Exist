@@ -151,3 +151,24 @@ dialogueBox.addEventListener('click', () => {
 // Start gry
 renderScene();
       
+// Obsługa trybu pełnoekranowego
+const fsBtn = document.getElementById('fullscreen-btn');
+
+fsBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Zapobiega przypadkowemu kliknięciu w dialog
+    
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().then(() => {
+            fsBtn.innerText = "✕ Wyjdź";
+        }).catch(err => {
+            console.log("Błąd włączania trybu pełnoekranowego: ", err);
+        });
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen().then(() => {
+                fsBtn.innerText = "⛶ Pełny ekran";
+            });
+        }
+    }
+});
+        

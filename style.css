@@ -5,7 +5,7 @@
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: transparent; /* Usuwa niebieskie podświetlenie po kliknięciu */
+    -webkit-tap-highlight-color: transparent;
 }
 
 body, html {
@@ -22,7 +22,82 @@ body, html {
     height: 100vh;
 }
 
-/* Przycisk Pełnego Ekranu */
+/* EKRAN GŁÓWNY / MENU */
+#main-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9)), url('zdjecie_zburzenie.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#menu-title {
+    color: #fff;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(74, 144, 226, 0.6);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+#menu-subtitle {
+    color: #4a90e2;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+#menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    max-width: 280px;
+}
+
+.menu-btn {
+    background: rgba(15, 18, 24, 0.85);
+    border: 1px solid rgba(74, 144, 226, 0.5);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: all 0.2s ease;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-btn:active {
+    background: #4a90e2;
+    color: #000;
+    transform: scale(0.96);
+}
+
+#author-credit {
+    position: absolute;
+    bottom: 25px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* PRZYCISK FULLSCREEN */
 #fullscreen-btn {
     position: absolute;
     top: 15px;
@@ -45,6 +120,7 @@ body, html {
     color: #000;
 }
 
+/* RENDEROWANIE GRY */
 #background {
     position: absolute;
     width: 100%;
@@ -158,4 +234,4 @@ body, html {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
     }
-                                 
+    

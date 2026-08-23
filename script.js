@@ -1,7 +1,6 @@
-// Silnik Gry - Eidolon Visual Novel: Część I - Rozdział 1
+// Silnik Gry - Eidolon Visual Novel
 
 const story = [
-    // --- PROLOG ---
     {
         id: 1,
         speaker: "SYSTEM",
@@ -26,7 +25,6 @@ const story = [
         text: "Siadam na łóżku i patrzę na dłonie. Brak krwi, brak obrażeń. A jednak... czuję, jakby to ciało nie należało do mnie.",
         bg: "pokoj.jpg"
     },
-    // --- SCENA 1: MIESZKANIE 8B ---
     {
         id: 4,
         speaker: "BOHATER",
@@ -44,14 +42,12 @@ const story = [
         bg: "zdjecie_zburzenie.jpg",
         nextId: 6
     },
-    // --- SCENA 2: LUSTRO ---
     {
         id: 6,
         speaker: "BOHATER",
         text: "Wchodzę do łazienki i spoglądam w lustro. 'Kim ty właściwie jesteś?'. Moje odbicie porusza ustami minimalnie za późno... Zmęczenie?",
         bg: "lustro.jpg"
     },
-    // --- SCENA 3: TELEFON ---
     {
         id: 7,
         speaker: "SYSTEM",
@@ -76,7 +72,6 @@ const story = [
         bg: "telefon.jpg",
         nextId: 10
     },
-    // --- SCENA 4: DRZWI ---
     {
         id: 10,
         speaker: "BOHATER",
@@ -87,7 +82,6 @@ const story = [
             { text: "Wyjdź natychmiast.", nextId: 11 }
         ]
     },
-    // --- SCENA 5: PIERWSZY KONTAKT Z MIASTEM ---
     {
         id: 11,
         speaker: "BOHATER",
@@ -107,7 +101,6 @@ const story = [
         text: "«Znam cię? Zależy... od tego, czy dzisiaj jest naprawdę pierwszy dzień.»",
         bg: "pokoj.jpg"
     },
-    // --- SCENA 6: KAWA ---
     {
         id: 14,
         speaker: "MARA",
@@ -120,7 +113,6 @@ const story = [
         text: "Biorę łyk. «...Nie lubię. Nie lubię czarnej kawy.» Mara zamiera w bezruchu: «Nigdy wcześniej tego nie powiedziałeś...»",
         bg: "pokoj.jpg"
     },
-    // --- SCENA 7: PIERWSZA NIEMOŻLIWA RZECZ ---
     {
         id: 16,
         speaker: "BOHATER",
@@ -133,7 +125,6 @@ const story = [
         text: "Zegar nadal tam jest i pokazuje 08:04. Mara błętnieje z przerażenia: «Nie... To nie powinno się wydarzyć.»",
         bg: "zdjecie_zburzenie.jpg"
     },
-    // --- SCENA 8: ULICA NUMER 17 ---
     {
         id: 18,
         speaker: "MARA",
@@ -152,21 +143,18 @@ const story = [
         text: "Na chodniku leży kartka: 'Nie ufaj Marze'. Mara patrzy na nią cicho: «To zaczyna się wcześniej niż ostatnio...»",
         bg: "zdjecie_zburzenie.jpg"
     },
-    // --- SCENA 9: DOM ---
     {
         id: 21,
         speaker: "MARA",
         text: "Odprowadza mnie pod drzwi: «Nie wychodź dziś po zmroku. O północy ulica zmienia numerację.»",
         bg: "drzwi.jpg"
     },
-    // --- SCENA 10: PUSTE MIESZKANIE ---
     {
         id: 22,
         speaker: "BOHATER",
         text: "Wchodzę do kuchni. Na stole stoi druga, ciepła filiżanka. Obok kartka: 'Mara kłamie'. Z drugiej strony pokręcona mapa z napisem: NIE JEDŹ NA PÓŁNOC.",
         bg: "pokoj.jpg"
     },
-    // --- SCENA 11: 23:59 & PÓŁNOC ---
     {
         id: 23,
         speaker: "BOHATER",
@@ -215,6 +203,28 @@ const bgEl = document.getElementById('background');
 const timeEl = document.getElementById('time-display');
 const dialogueBox = document.getElementById('dialogue-box');
 const choicesContainer = document.getElementById('choices-container');
+const mainMenu = document.getElementById('main-menu');
+const playBtn = document.getElementById('play-btn');
+const langBtn = document.getElementById('lang-btn');
+
+// Start Gry z Menu
+playBtn.addEventListener('click', () => {
+    mainMenu.style.opacity = '0';
+    mainMenu.style.visibility = 'hidden';
+    renderScene();
+});
+
+// Zmiana języka (Placeholder pod rozbudowę)
+let isPolish = true;
+langBtn.addEventListener('click', () => {
+    isPolish = !isPolish;
+    if (isPolish) {
+        langBtn.innerText = "Język: PL 🇵🇱";
+    } else {
+        langBtn.innerText = "Language: EN 🇬🇧";
+        alert("Wersja angielska będzie dostępna w kolejnej aktualizacji!");
+    }
+});
 
 function renderScene() {
     const currentScene = story[currentIndex];
@@ -296,7 +306,4 @@ fsBtn.addEventListener('click', (e) => {
         }
     }
 });
-
-// Start gry
-renderScene();
         

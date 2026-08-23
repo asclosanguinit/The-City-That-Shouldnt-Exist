@@ -8,32 +8,40 @@
 </head>
 <body>
     <div id="game-container">
-            <div id="game-container">
-        <!-- Przycisk Pełnego Ekranu -->
-        <button id="fullscreen-btn">⛶ Pełny ekran</button>
+        <!-- EKRAN GŁÓWNY (MENU) -->
+        <div id="main-menu">
+            <h1 id="menu-title">MIASTO, KTÓRE NIE POWINNO ISTNIEĆ</h1>
+            <p id="menu-subtitle">Visual Novel</p>
+            
+            <div id="menu-buttons">
+                <button id="play-btn" class="menu-btn">GRAJ</button>
+                <button id="lang-btn" class="menu-btn">Język: PL 🇵🇱</button>
+            </div>
+            
+            <div id="author-credit">Autor: AscloSanguinit</div>
+        </div>
 
-        <!-- Tło gry -->
-        <div id="background"></div>
-                
-        <!-- Tło gry -->
+        <!-- PRZYCISK FULLSCREEN -->
+        <button id="fullscreen-btn">⛶ Fullscreen</button>
+
+        <!-- TŁO I INTERFEJS GRY -->
         <div id="background"></div>
         <div id="overlay"></div>
 
-        <!-- Zegar i Czas (UI) -->
+        <!-- ZEGAR I CZAS (UI) -->
         <div id="time-display">06:42 | Poniedziałek</div>
 
-        <!-- Box Dialogowy -->
+        <!-- BOX DIALOGOWY -->
         <div id="dialogue-box">
             <div id="speaker-name">BOHATER</div>
             <div id="dialogue-text">...</div>
             <div id="click-prompt">Dotknij, aby kontynuować ▼</div>
         </div>
 
-        <!-- Kontener na Wybory -->
+        <!-- KONTENER NA WYBORY -->
         <div id="choices-container" class="hidden"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-

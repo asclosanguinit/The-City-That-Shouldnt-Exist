@@ -170,7 +170,7 @@ const story = [
         },
         bg: "drzwi.jpg",
         choices: [
-            { text: { en: "Listen to the warning.", pl: "Posłuchaj ostrzeżenia.", de: "Auf die Warnung hören.", es: "Escucha la advertencia." }, nextId: 11 },
+        
             { text: { en: "Leave immediately.", pl: "Wyjdź natychmiast.", de: "Sofort verlassen.", es: "Sal de inmediato." }, nextId: 11 }
         ]
     },
